@@ -1,13 +1,34 @@
-const produtos = ['camisa', 'calça ', 'saia   ', 'short ']
-const codigo = ['P01', 'P02', 'P03', 'P04']
-const preco = [0,0,0,0]
+const leia = require("prompt-sync")();
+let MAT = ["A01", "A02", "A03", "A04"];
+let aluno = ["JOAO", "CAIO", "LEO", "PEDRO"];
+let nota = [0, 0, 0, 0];
 
-console.log(`CODIGO\t PRODUTO\t PREÇO`)
-for (let i = 0; i < produtos.length; i++) {
-    console.log(`${codigo[i]}\t ${produtos[i]} \t ${preco[i]} `)
+console.log("MAT\tALUNO\tNOTA");
+for (let i = 0; i < MAT.length; i++) {
+    console.log(MAT[i] + "\t" + aluno[i] + "\t" + nota[i]);
 }
 
-console.log("Digitição dos valores")
-for (let i = 0; i < codigo.length; i++) {
-    console.log(`${codigo[1]} \t ${produtos[i]}`)
+console.log("Digitação de valores");
+for (let i = 0; i < MAT.length; i++) {
+    console.log(MAT[i] + "\t" + aluno[i]);
+    nota[i] = leia("Digite o valor da nota: ");
+}
+
+console.log("MAT\tALUNO\tNOTA");
+for (let i = 0; i < MAT.length; i++) {
+    console.log(MAT[i] + "\t" + aluno[i] + "\t" + nota[i]);
+}
+
+console.log("ALTERAÇÃO DE DADOS");
+let code = leia("Digite a matrícula do aluno que deseja trocar a nota: ");
+for (let i = 0; i < MAT.length; i++) {
+    if (code == MAT[i]) {
+        console.log("Nome atual do aluno: " + aluno[i]);
+        aluno[i] = leia("Digite o novo aluno: ");
+    }
+}
+
+console.log("COD\tALUNO\tNOTA");
+for (let i = 0; i < MAT.length; i++) {
+    console.log(MAT[i] + "\t" + aluno[i] + "\t" + nota[i]);
 }
