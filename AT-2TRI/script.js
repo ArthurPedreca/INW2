@@ -33,12 +33,13 @@ let opcaoSubMenu = ""
 let auxCod = ""
 let posicao = -1
 
+let carrinho = [];
 
 while (opcaoMenuPrincipal != "2") {
   console.log("LOJA XXX\n\n")
   console.log("MENU PRINCIPAL")
   console.log("1 - Opções")
-  console.log("2 - Sair")
+  console.log("2 - Contratar Serviço")
   opcaoMenuPrincipal = prompt("Digite o numero da sua opção : ")
   if (opcaoMenuPrincipal == "1") {
     opcaoSubMenu = ""
@@ -103,7 +104,6 @@ while (opcaoMenuPrincipal != "2") {
 
 1
 
-const carrinho = [];
 
 function mostrarServicos() {
   console.log("Serviços disponíveis:");
@@ -120,9 +120,9 @@ function removerItem(item) {
     servico.splice(i, 1);
     valorDoacao.splice(i, 1);
     mov.splice(i, 1);
-    console.log(`Item com ID ${item} foi removido.`);
+    console.log(`Item com código ${item} foi removido.`);
   } else {
-    console.log(`Item com ID ${item} não encontrado.`);
+    console.log(`Item com código ${item} não encontrado.`);
   }
 }
 
@@ -141,16 +141,17 @@ function mostrarCarrinho() {
     totalDoacao += valorTotalItem;
   }
 
-  console.log(`Valor total de doação: R$${totalDoacao}`);
+  console.log(`Valor total: R$${totalDoacao}`);
 }
 
 function continuar() {
   do {
-    const continuarPergunta = prompt("Você deseja fazer mais doações? (S/N) ");
+    const continuarPergunta = prompt("Você deseja contratar mais serviços? S/N ");
     if (continuarPergunta.toUpperCase() === "S") {
       mostrarServicos();
       solicitarServico();
     } else {
+      console.log("Até Mais!")
       break;
     }
   } while (true);
