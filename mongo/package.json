@@ -1,11 +1,11 @@
 {
   "name": "mongo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Após baixar esse projeto execute o comando abaixo no terminal: \r npm install",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js localhost 8000"
+    "start": "nodemon ./cadastro.js localhost 8000"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,6 @@
     "mongoose": "^7.5.0",
     "nodemon": "^3.0.1",
     "nodemonitor": "^0.0.1"
-  }
+  },
+  "devDependencies": {}
 }
